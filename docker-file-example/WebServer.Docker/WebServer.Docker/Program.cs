@@ -1,4 +1,4 @@
-namespace WebServcer.Docker;
+namespace WebServer.Docker;
 
 public class Program
 {

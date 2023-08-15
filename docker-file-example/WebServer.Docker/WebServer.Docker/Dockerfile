@@ -6,16 +6,16 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["WebServcer.Docker/WebServcer.Docker.csproj", "WebServcer.Docker/"]
-RUN dotnet restore "WebServcer.Docker/WebServcer.Docker.csproj"
+COPY ["WebServer.Docker/WebServer.Docker.csproj", "WebServer.Docker/"]
+RUN dotnet restore "WebServer.Docker/WebServer.Docker.csproj"
 COPY . .
-WORKDIR "/src/WebServcer.Docker"
-RUN dotnet build "WebServcer.Docker.csproj" -c Release -o /app/build
+WORKDIR "/src/WebServer.Docker"
+RUN dotnet build "WebServer.Docker.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "WebServcer.Docker.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "WebServer.Docker.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebServcer.Docker.dll"]
+ENTRYPOINT ["dotnet", "WebServer.Docker.dll"]

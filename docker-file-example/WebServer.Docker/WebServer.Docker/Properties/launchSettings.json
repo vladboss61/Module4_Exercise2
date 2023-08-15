@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "WebServcer.Docker": {
+    "WebServer.Docker": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
