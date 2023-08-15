@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis-container-name
+
+  web:
+    build: ./py-server
+    image: web-python
+    container_name: web-python-container-name
+    depends_on:
+      - redis
+    expose:
+      - 5000
+    ports:
+      - "8000:5000"

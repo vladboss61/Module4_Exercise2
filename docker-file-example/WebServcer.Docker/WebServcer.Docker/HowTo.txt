@@ -1,0 +1,2 @@
+docker build -t my-web-server-dotnet .
+docker run -p 50010:80 my-web-server-dotnet

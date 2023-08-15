@@ -1,0 +1,1 @@
+docker compose -p name_in_docker_desktop up

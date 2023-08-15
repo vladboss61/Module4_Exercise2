@@ -1,0 +1,5 @@
+1 - docker pull busybox
+2 - docker images
+3 - docker run busybox echo "hello docker busybox image"
+4 - docker ps
+5 - docker run -it busybox sh

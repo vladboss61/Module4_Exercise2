@@ -1,0 +1,4 @@
+docker-compose up
+
+postgres default user : postgres
+ms sql default user : sa
