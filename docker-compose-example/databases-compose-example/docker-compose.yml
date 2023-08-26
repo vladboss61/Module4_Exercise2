@@ -10,7 +10,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - 8001:80    
+      - 8001:80
 
   postgres:
     image: postgres:13.3

@@ -1,0 +1,16 @@
+version: '3.4'
+services:
+
+  postgres:
+    image: postgres:13.3
+    container_name: lde.postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5433:5432
+
+  asp-web:
+    image: ./WebServer.Docker
+    container_name: my-asp-app
+    ports:
+      - 9002:80
